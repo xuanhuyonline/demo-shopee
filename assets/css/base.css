@@ -21,7 +21,7 @@ html {
     /* Roboto font vừa tải về, sans-serif chủng chữ ko chân */
     box-sizing: border-box;
 }
-
+/* responsive */
 .grid {
     width: 1200px;
     max-width: 100%;
@@ -38,6 +38,27 @@ html {
     /* display: flex; nằm trên 1 hàng ngang */
     /* flex-wrap: wrap; tổng những thằng con trên 1 hàng vượt quá
     phần của .gird__row sẽ tự động xuống hàng*/
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
 }
 
 /* Animation */
@@ -105,10 +126,12 @@ html {
     outline: none;
     cursor: pointer;
     color: var(--text-color);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1.6rem;
+
+    background-color: var(--white-color);
     
 }
 
@@ -133,3 +156,74 @@ html {
     cursor: default;
     background-color: #c3c3c3;
 }
+
+/* Selection */
+.select-input {
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.select-input__lable {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: #949494;
+    position: relative;
+    top: 1px;
+}
+
+/* List option */
+.select-input__list {
+    position: absolute;
+    list-style: none;
+    top: 25px;
+    min-width: 200px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    display: none;
+    box-shadow: 0 1px 2px #e0e0e0; 
+    animation: notify-growth ease-in 0.2s;
+    /* padding-left: 0; */
+    padding: 8px 16px;
+    /* z-index: 1; */
+}
+
+.select-input__list::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 2px;
+    display: block;
+    top: 0;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 4px 0;
+    display: block;
+    
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
